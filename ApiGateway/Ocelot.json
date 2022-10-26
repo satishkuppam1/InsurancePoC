@@ -1,0 +1,30 @@
+{
+
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/Policy",
+            "DownstreamScheme":"https",
+            "DownstreamHostAndPorts":[{
+                "Host":"localhost",
+                "Port":"7289"
+            }],
+            "UpstreamPathTemplate":"/InsurancePortal",
+            "UpstreamPathMethod":["Get","Post"]     
+        },
+        {
+            "DownstreamPathTemplate": "/api/Policy/{id}",
+            "DownstreamScheme":"https",
+            "DownstreamHostAndPorts":[{
+                "Host":"localhost",
+                "Port":"7289"
+            }],
+            "UpstreamPathTemplate":"/InsurancePortal/Policy/{id}",
+            "UpstreamPathMethod":["Get","Delete"]
+        }
+    ],
+
+    "GlobalConfiguration": {
+        "BaseUrl":"https://localhost:7150"
+    }
+
+}

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: policy-deployment
+spec:
+  selector:
+    matchLabels:
+      app: policy-pod
+  template:
+    metadata:
+      labels:
+        app: policy-pod
+    spec:
+      containers:
+      - name: policy-container
+        image: policy:v1
+        imagePullPolicy: Never
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

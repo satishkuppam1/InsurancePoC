@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: policy-service
+spec:
+  selector:
+    app: policy-pod
+  ports:
+  - port: 7150
+    targetPort: 80
+  type: LoadBalancer
+
